@@ -7,8 +7,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'startup name generator',
-      home: RandomWords(),
+        title: 'startup name generator',
+        home: RandomWords(),
     );
   }
 }
@@ -35,9 +35,9 @@ class RandomWordState extends State<RandomWords> {
             _suggestions.addAll(generateWordPairs().take(10));
           }
 
-          return _buildRow(_suggerstions[index]);
-        };
-    )
+          return _buildRow(_suggestions[index]);
+        }
+    );
   }
 
   Widget _buildRow(WordPair pair) {
