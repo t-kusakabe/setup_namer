@@ -22,11 +22,11 @@ class RandomWordState extends State<RandomWords> {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
-          if(i.isOdd) return Divider();
+          if (i.isOdd) return Divider();
 
           final index = i ~/ 2;
 
-          if(index >= _suggestions.length) {
+          if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
           }
 
