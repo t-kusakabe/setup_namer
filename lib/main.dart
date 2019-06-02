@@ -14,12 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class RandomWordState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
-    final wordPair = WordPair.random();
-    return Text(wordPair.asPascalCase);
-  }
-
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
@@ -46,6 +40,16 @@ class RandomWordState extends State<RandomWords> {
             pair.asPascalCase,
             style: _biggerFont,
         ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            title: Text('startup name generator'),
+        ),
+        body: _buildSuggestions(),
     );
   }
 }
